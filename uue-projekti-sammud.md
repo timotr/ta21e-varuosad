@@ -10,3 +10,4 @@
 9. Dokumenteerin kuidas projekti setup teha ja kuidas käima panna
 10. Testin kas hello world tuleb ette.
 11. Installin frontend frameworki, testin kas hello world tuleb ette
+12. Commitin ja pushin mõlemad projektid, message "Project init"
