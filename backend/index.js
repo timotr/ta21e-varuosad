@@ -1,9 +1,20 @@
 import express from 'express';
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
+import { db, parts } from './drizzle/schema.js';
+
+app.get('/', async (req, res) => {
+  try {
+    let result = await db.select().from(parts);
+    res.send(result);
+  } catch (e) {
+    console.log(e);
+    res.send({ error: "Error fetching parts", e });
+  }
 })
 
 app.listen(port, () => {

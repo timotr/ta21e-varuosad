@@ -16,15 +16,28 @@ API Integration: You can search for parts by name or product id code. You can fi
 
 ## How to setup dev environement
 
-Install packages
+### Install packages
 
     npm i
 
-Make a copy of env variables file
+### Make a copy of env variables file
 
     cp .env.template .env
 
-Run dev server
+### Setup database and update database connection values in .env file
+
+```
+DB_HOST=localhost
+DB_USER=varuosad
+DB_DATABASE=varuosad
+DB_PASSWORD=Passw0rd
+```
+
+### Run migrations
+
+    npm run migrate
+
+### Run dev server
 
     npm start
 
@@ -36,3 +49,10 @@ Default port is 3001, you can access API from http://localhost:3001/
 Run in production
 
     npm run prod
+
+
+## How to change database schema and update using migrations
+
+First make a change in `src/db/scheme.js` file.
+Then run `npm run generate` to create new migration.
+Then apply/push migration by running `npm run migrate`

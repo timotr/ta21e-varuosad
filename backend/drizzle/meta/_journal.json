@@ -1,0 +1,13 @@
+{
+  "version": "5",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1695798641752,
+      "tag": "0000_optimal_orphan",
+      "breakpoints": true
+    }
+  ]
+}
