@@ -5,17 +5,10 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3001;
 
-import { db, parts } from './drizzle/schema.js';
+import parts from './controllers/parts.js';
+import { checkLoggedIn } from './components/auth.js';
 
-app.get('/', async (req, res) => {
-  try {
-    let result = await db.select().from(parts);
-    res.send(result);
-  } catch (e) {
-    console.log(e);
-    res.send({ error: "Error fetching parts", e });
-  }
-})
+app.use('/api/parts', checkLoggedIn, parts);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
