@@ -1,4 +1,4 @@
-## Uue projekti sammud:
+## Uue projekti sammud
 1. Teen Git repo
 2. Lisan SSH võtmed (per repo või user)
 3. git clone  projektide kaustas mitte suvalt desktopil
